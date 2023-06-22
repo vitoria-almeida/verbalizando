@@ -1,9 +1,9 @@
 # verbalizando
 Verbalizando é um jogo estilo "jogo da forca", no qual o jogador deverá descobrir a palavra escolhendo uma letra do alfabeto por vez.
 
-Como jogar?
-1ª Acesse o link: [link];
+# Como jogar?
 
+1ª Acesse o link: [link];
 
 2º Clique no botão JOGAR para iniciar o jogo;
 
