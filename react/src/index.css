@@ -1,0 +1,28 @@
+:root {
+  --fontColor: rgb(44, 44, 44);
+  --pink: #FA26A0;
+  --yellow: #F8D210;
+  --blue: #2FF3E0;
+  --red: #F51720;
+  --green: #8cff11;
+  --darkBlue: #2511ff;
+  --background: rgba(255, 255, 255, 0.87);
+  --backgroundButton: rgba(255, 255, 255, 0.97);
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  background-color: var(--background);
+  color: var(--fontColor);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,32 @@
+h1 {
+    font-size: 100px;
+    animation: Color 5s linear infinite;
+    -webkit-animation: Color 10s ease-in-out infinite;
+    text-shadow: 10px 10px #F0F0F0;
+}
+
+/* text color animation */
+@keyframes Color {
+    0% {color: var(-green)} 
+    20% {color: var(--blue)}
+    40% {color: var(--yellow)}
+    60% {color: var(--red)}
+    80% {color: var(--darkBlue)}
+    100% {color:var(--pink)}
+} 
+@-moz-keyframes Color {
+    0% {color: var(-green)} 
+    20% {color: var(--blue)}
+    40% {color: var(--yellow)}
+    60% {color: var(--red)}
+    80% {color: var(--darkBlue)}
+    100% {color:var(--pink)}
+} 
+@-webkit-keyframes Color {
+    0% {color: var(-green)} 
+    20% {color: var(--blue)}
+    40% {color: var(--yellow)}
+    60% {color: var(--red)}
+    80% {color: var(--darkBlue)}
+    100% {color:var(--pink)}
+}
