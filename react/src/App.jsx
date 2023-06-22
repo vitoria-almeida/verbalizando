@@ -1,3 +1,4 @@
+import styles from './App.module.css'
 import GameContainer from "./components/GameContainer"
 import GameoverContainer from "./components/GameoverContainer"
 import StartContainer from "./components/StartContainer"
@@ -16,12 +17,16 @@ function App() {
   const [gameStage, setGameStage] = useState(stages[0].stage)
   const [words] = useState(wordsList)
 
+  const startGame = () => {
+    setGameStage(stages[1].stage)
+  }
+
   return (
-    <>
-      {gameStage === 'start' && <StartContainer/>}
+    <div className={styles.div}>
+      {gameStage === 'start' && <StartContainer startGame={startGame}/>}
       {gameStage === 'game' && <GameContainer/>}
       {gameStage === 'gameover' && <GameoverContainer/>}
-    </>
+    </div>
   )
 }
 

@@ -1,11 +1,13 @@
-import styles from './StartContainer.module.css'
+import styles from './css/StartContainer.module.css'
 import Title from './Title'
 
-const Container = () => {
+const Container = ({startGame}) => {
   return (
     <section className={styles.section}>
         <Title/>
-        <button className={styles.button}>JOGAR</button>
+        <div className={styles.divButton}>
+          <button className={styles.button} onClick={startGame}>JOGAR</button>
+        </div>
     </section>
   )
 }

@@ -1,4 +1,4 @@
-import styles from './GameoverContainer.module.css'
+import styles from './css/GameoverContainer.module.css'
 
 const GameoverContainer = () => {
   return (

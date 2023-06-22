@@ -1,7 +1,9 @@
-import styles from './GameContainer.module.css'
+import styles from './css/GameContainer.module.css'
 
-export const GameContainer = () => {
+const GameContainer = () => {
   return (
     <div>GameContainer</div>
   )
 }
+
+export default GameContainer

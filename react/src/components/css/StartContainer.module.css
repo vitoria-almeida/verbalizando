@@ -3,6 +3,12 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+}
+
+.divButton {
+    width: 100%;
+    height: auto;
 }
 
 button {
@@ -23,4 +29,3 @@ button:hover {
     letter-spacing: .25em;
     transition: all .6s ease;
 }
-
