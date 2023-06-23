@@ -5,7 +5,7 @@ import StartContainer from "./components/StartContainer"
 
 import { wordsList } from "./data/words"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 function App() {
   const stages = [
@@ -61,10 +61,25 @@ function App() {
       setWrongLetters((actualWrongLetters) => [
         ...actualWrongLetters, defaultLetter
       ])
+      setChances((actualGuesses) => actualGuesses - 1)
     }
   }
 
+  function clearGame() {
+    setGuessedLetters([])
+    setWrongLetters([])
+  }
+
+  useEffect(() => {
+    if(chances <= 0) {
+      clearGame()
+      setGameStage(stages[2].stage)
+    }
+  }, [chances])
+
   const retry = () => {
+    setScore(0)
+    setChances(5)
     setGameStage(stages[0].stage)
   }
 
