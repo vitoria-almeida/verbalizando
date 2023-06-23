@@ -3,7 +3,7 @@ import { useState, useRef } from 'react'
 import Button from './Button'
 import styles from './css/GameContainer.module.css'
 
-const GameContainer = ({ verifyLetter, pickedWord, pickedCategory, letters, guessedLetters, wrongLetters, chances, score }) => {
+const GameContainer = ({ verifyLetter, pickedCategory, letters, guessedLetters, wrongLetters, chances, score }) => {
   const [letter, setLetter] = useState('')
   const letterInputRef = useRef(null)
 
