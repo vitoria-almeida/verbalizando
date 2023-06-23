@@ -11,21 +11,68 @@ function App() {
   const stages = [
     {id: 1, stage: "start"},
     {id: 2, stage: "game"},
-    {id: 3, stage: "gameover"},
+    {id: 3, stage: "gameover"}
   ]
 
   const [gameStage, setGameStage] = useState(stages[0].stage)
   const [words] = useState(wordsList)
+  const [pickedWord, setPickedWord] = useState('')
+  const [pickedCategory, setPickedCategory] = useState('')
+  const [letters, setLetters] = useState([])
+  const [guessedLetters, setGuessedLetters] = useState([])
+  const [wrongLetters, setWrongLetters] = useState([])
+  const [chances, setChances] = useState(5)
+  const [score, setScore] = useState(0)
+
+  function randomCategoryAndWord() {
+    const categories = Object.keys(words)
+    const category = categories[Math.floor(Math.random() * Object.keys(categories).length)]
+    const word = words[category][Math.floor(Math.random() * words[category].length)]
+    return {category, word}
+  }
 
   const startGame = () => {
+    const {category, word} = randomCategoryAndWord()
+
+    //transforming a word in an array of letters
+    let wordsLetters = word.split('')
+    wordsLetters = wordsLetters.map((letter) => letter.toLowerCase())
+
+    //setting states with variables created above
+    setPickedCategory(category)
+    setPickedWord(word)
+    setLetters(wordsLetters)
+
     setGameStage(stages[1].stage)
   }
 
+  const verifyLetter = (letter) => {
+    const defaultLetter = letter.toLowerCase()
+
+    if(guessedLetters.includes(defaultLetter) || wrongLetters.includes(defaultLetter)) {
+      return 
+    }
+
+    if(letters.includes(defaultLetter)) {
+      setGuessedLetters((actualGuessedLetters) => [
+        ...actualGuessedLetters, defaultLetter
+      ])
+    } else {
+      setWrongLetters((actualWrongLetters) => [
+        ...actualWrongLetters, defaultLetter
+      ])
+    }
+  }
+
+  const retry = () => {
+    setGameStage(stages[0].stage)
+  }
+
   return (
-    <div className={styles.div}>
+    <div className={styles.divApp}>
       {gameStage === 'start' && <StartContainer startGame={startGame}/>}
-      {gameStage === 'game' && <GameContainer/>}
-      {gameStage === 'gameover' && <GameoverContainer/>}
+      {gameStage === 'game' && <GameContainer verifyLetter={verifyLetter} pickedWord={pickedWord} pickedCategory={pickedCategory} letters={letters} guessedLetters={guessedLetters} wrongLetters={wrongLetters} chances={chances} score={score}/>}
+      {gameStage === 'gameover' && <GameoverContainer retry={retry}/>}
     </div>
   )
 }

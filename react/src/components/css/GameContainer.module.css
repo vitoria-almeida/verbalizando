@@ -1,0 +1,57 @@
+div {
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5em;
+}
+
+h4 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.dica {
+    color: var(--pink);
+}
+
+p, span {
+    font-size: 25px;
+}
+
+.wordContainer {
+    margin: 1.5em;
+    padding: 1.5em;
+    border: 20px solid var(--pink);
+    display: flex;
+}
+
+.wordContainer .letter, .blankSquare {
+    font-size: 70px;
+    line-height: 1.5;
+    border: 3px solid var(--fontColor);
+    height: 100px;
+    width: 100px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.letterContainer p {
+    margin-bottom: 1.2em;
+}
+
+.letterContainer form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.letterContainer form input {
+    width: 50px;
+    height: 50px;
+    font-size: 2em;
+    text-align: center;
+    border: 3px solid var(--fontColor);
+    text-transform: uppercase;
+    margin-right: 1em;
+}

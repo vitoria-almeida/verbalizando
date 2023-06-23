@@ -1,8 +1,12 @@
+import Button from './Button'
 import styles from './css/GameoverContainer.module.css'
 
-const GameoverContainer = () => {
+// eslint-disable-next-line react/prop-types
+const GameoverContainer = ({ retry }) => {
   return (
-    <div>GameoverContainer</div>
+    <div>
+      <Button text='JOGAR NOVAMENTE' handleOnClick={retry}/>
+    </div>
   )
 }
 

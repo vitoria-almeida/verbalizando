@@ -1,0 +1,18 @@
+button {
+    font-size: 25px;
+    font-weight: 800;
+    color: var(--fontColor);
+    transition: all .6s ease;
+
+    padding: 15px 40px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #7070704c;
+    cursor: pointer;
+}
+
+button:hover {
+    font-size: 30px;
+    letter-spacing: .25em;
+    transition: all .6s ease;
+}
