@@ -25,7 +25,7 @@ const GameContainer = ({ verifyLetter, pickedCategory, letters, guessedLetters, 
         {letters.map((letter, index) => (
           guessedLetters.includes(letter) 
           ? <span key={index} className={styles.letter}>{letter}</span>
-          : <span key={index} className={styles.blankSquare}></span>
+          : <span key={index} className={styles.blankLine}></span>
         ))}       
       </div>
 
