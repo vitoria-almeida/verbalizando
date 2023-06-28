@@ -2,43 +2,38 @@ div {
     text-align: center;
 }
 
-h2 {
-    font-size: 2.5em;
-}
-
 h4 {
-    font-size: 25px;
+    font-size: 1.5em;
     font-weight: bold;
 }
 
-.dica {
-    color: var(--pink);
+h2 {
+    font-size: 2em;
 }
 
-p, span {
-    font-size: 18px;
+span {
+    color: var(--primaryColor);
+}
+
+p {
+    font-size: 20px;
 }
 
 .wordContainer {
     margin: 1.5em;
-    padding: 1.5em;
-    border: 20px solid var(--pink);
+    padding: 1em;
     display: flex;
 }
 
 .wordContainer .letter, .blankLine {
-    font-size: 70px;
-    line-height: 1.5;
+    font-size: 4em;
+    line-height: 1;
     margin: 0 10px;
     border-bottom: 3px solid var(--fontColor);
-    height: 100px;
-    width: 100px;
+    height: 70px;
+    width: 70px;
     text-transform: uppercase;
     font-weight: bold;
-}
-
-.letterContainer p {
-    margin-bottom: 1.2em;
 }
 
 .letterContainer form {
@@ -49,10 +44,34 @@ p, span {
 
 .letterContainer form input {
     width: 50px;
-    height: 50px;
-    font-size: 2em;
+    height: 43px;
+    font-size: 1.5rem;
     text-align: center;
     border: 3px solid var(--fontColor);
     text-transform: uppercase;
     margin-right: 1em;
+}
+
+.letterContainer form .playButton {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: white;
+    letter-spacing: 3px;
+
+    background-color: var(--primaryColor);
+    cursor: pointer;
+    border: 2px solid var(--primaryColor);
+    width: 140px;
+    height: 50px;
+}
+
+.wrongLettersContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrongLettersContainerSpan {
+    padding: 0 5px;
+    font-size: 1.5em;
 }

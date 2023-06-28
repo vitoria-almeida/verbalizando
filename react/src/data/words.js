@@ -26,6 +26,5 @@ export const wordsList = {
         "Responder",
         "Desmoronar",
         "Fechar",
-        "Reestabelecer"
     ]
 }

@@ -1,13 +1,16 @@
 .divApp {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; 
+    justify-content: center;
     width: 100vw;
     height: 100vh;
+    background-color: var(--primaryColor);
 }
 
-@media screen and (max-width: 765px) {
-    .divApp {
-        justify-content: center;
-    }
+.sectionApp{
+    width: 60%;
+    height: 70%;
+    background-color: white; 
+    line-height: 1;
 }

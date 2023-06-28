@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { useState, useRef } from 'react'
-import Button from './Button'
 import styles from './css/GameContainer.module.css'
 
 const GameContainer = ({ verifyLetter, pickedCategory, letters, guessedLetters, wrongLetters, chances, score }) => {
@@ -16,10 +15,9 @@ const GameContainer = ({ verifyLetter, pickedCategory, letters, guessedLetters, 
 
   return (
     <div className={styles.div}>
-      <h4>Pontuação: {score}</h4>
-      <h2>Adivinhe a Palavra</h2>
-      <h3>Dica: <span className={styles.dica}>{pickedCategory}</span></h3>
-      <p>Você ainda tem {chances} tentativa(s).</p>
+      <h4>Pontuação: <span>{score}</span></h4>
+      <h2>Adivinhe o <span>{pickedCategory}</span></h2>
+      <p>Você ainda tem <span>{chances}</span> tentativa(s).</p>
 
       <div className={styles.wordContainer}>
         {letters.map((letter, index) => (
@@ -33,14 +31,14 @@ const GameContainer = ({ verifyLetter, pickedCategory, letters, guessedLetters, 
         <p>Escolha uma letra:</p>
         <form onSubmit={handleSubmit}>
           <input type='text' name='letter' maxLength='1' required onChange={(e) => setLetter(e.target.value)} value={letter} ref={letterInputRef}/>
-          <Button text='JOGAR'/>
+          <button className={styles.playButton}>JOGAR</button>
         </form>
       </div>
 
       <div className={styles.wrongLettersContainer}>
         <p>Letras já utilizadas:</p>
         {wrongLetters.map((letter, index) => (
-          <span key={index}>{letter}, </span>
+          <span key={index} className={styles.wrongLettersContainerSpan}> {letter}, </span>
         ))}
       </div>
     </div>

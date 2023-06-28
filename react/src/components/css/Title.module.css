@@ -1,40 +1,41 @@
 h1 {
     width: 100%;
-    font-size: 7vw;
-    animation: Color 5s linear infinite;
-    -webkit-animation: Color 10s ease-in-out infinite;
-    text-shadow: 10px 10px #F0F0F0;
+    font-size: 6vw;
     text-align: center;
+    font-family: 'Luckiest Guy', cursive;
+    font-weight: bolder;
+    letter-spacing: 6px;
+    text-shadow: 10px 10px #F0F0F0;
+
+    animation: Color 2s linear infinite;
+    -webkit-animation: Color 2s ease-in-out infinite;   
 }
 
 /* text color animation */
 @keyframes Color {
-    0% {color: var(-green)} 
-    20% {color: var(--blue)}
-    40% {color: var(--yellow)}
-    60% {color: var(--red)}
-    80% {color: var(--darkBlue)}
-    100% {color:var(--pink)}
+    0% {color: var(--primaryColor)} 
+    25% {color: #15215C}
+    55% {color: #0E1C67}
+    75% {color: #0C1B6B}
+    100% {color: var(--primaryColor)}
 } 
 @-moz-keyframes Color {
-    0% {color: var(-green)} 
-    20% {color: var(--blue)}
-    40% {color: var(--yellow)}
-    60% {color: var(--red)}
-    80% {color: var(--darkBlue)}
-    100% {color:var(--pink)}
+    0% {color: var(--primaryColor)} 
+    25% {color: #15215C}
+    55% {color: #0E1C67}
+    75% {color: #0C1B6B}
+    100% {color: var(--primaryColor)}
 } 
 @-webkit-keyframes Color {
-    0% {color: var(-green)} 
-    20% {color: var(--blue)}
-    40% {color: var(--yellow)}
-    60% {color: var(--red)}
-    80% {color: var(--darkBlue)}
-    100% {color:var(--pink)}
+    0% {color: var(--primaryColor)} 
+    25% {color: #15215C}
+    55% {color: #0E1C67}
+    75% {color: #0C1B6B}
+    100% {color: var(--primaryColor)}
 }
 
 @media screen and (max-width: 768px) {
     h1 {
-        font-size: 10vw;
+        
     }
 }

@@ -1,18 +1,50 @@
-button {
-    font-size: 25px;
-    font-weight: 800;
-    color: var(--fontColor);
-    transition: all .6s ease;
-
-    padding: 15px 40px;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 5px 5px 5px #7070704c;
-    cursor: pointer;
+.wrapper{
+    position: fixed;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-button:hover {
-    font-size: 30px;
-    letter-spacing: .25em;
-    transition: all .6s ease;
+a {
+    transition: all .35s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: .5rem;
+    color: var(--primaryColor);
+    letter-spacing: 10px;
+
+    background-color: white;
+    cursor: pointer;
+    border: 2px solid var(--primaryColor);
+    width: 200px;
+    height: 50px;
+}
+
+a span {
+    position: relative;
+    z-index: 2;
+}
+
+a:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--primaryColor);
+    transition: all .35s;
+}
+  
+a span:hover {
+    transition: all .35s;
+    color: white;
+}
+  
+a:hover:after {
+    width: 100%;
 }

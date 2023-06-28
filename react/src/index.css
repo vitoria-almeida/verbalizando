@@ -1,13 +1,6 @@
 :root {
   --fontColor: rgb(44, 44, 44);
-  --pink: #FA26A0;
-  --yellow: #F8D210;
-  --blue: #2FF3E0;
-  --red: #F51720;
-  --green: #8cff11;
-  --darkBlue: #2511ff;
-  --background: rgba(255, 255, 255, 0.87);
-  --backgroundButton: rgba(255, 255, 255, 0.97);
+  --primaryColor: #222B45;
 }
 
 body {

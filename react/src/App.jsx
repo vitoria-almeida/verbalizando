@@ -6,6 +6,7 @@ import StartContainer from "./components/StartContainer"
 import { wordsList } from "./data/words"
 
 import { useCallback, useEffect, useState } from "react"
+import { generateTexture } from "./utils/generateTexture";
 
 const stages = [
   {id: 1, stage: "start"},
@@ -96,11 +97,17 @@ function App() {
 
   }, [gameStage, guessedLetters, letters, startGame])
 
+  //background 
+  const [newText] = useState('VERBALIZANDO');
+  const [newTexture] = useState(generateTexture(newText));
+  
   return (
-    <div className={styles.divApp}>
-      {gameStage === 'start' && <StartContainer startGame={startGame}/>}
-      {gameStage === 'game' && <GameContainer verifyLetter={verifyLetter} pickedWord={pickedWord} pickedCategory={pickedCategory} letters={letters} guessedLetters={guessedLetters} wrongLetters={wrongLetters} chances={chances} score={score}/>}
-      {gameStage === 'gameover' && <GameoverContainer retry={retry} score={score}/>}
+    <div className={styles.divApp} style={{ backgroundImage: `url(${newTexture})` }}>
+      <section className={styles.sectionApp} >
+        {gameStage === 'start' && <StartContainer startGame={startGame}/>}
+        {gameStage === 'game' && <GameContainer verifyLetter={verifyLetter} pickedWord={pickedWord} pickedCategory={pickedCategory} letters={letters} guessedLetters={guessedLetters} wrongLetters={wrongLetters} chances={chances} score={score}/>}
+        {gameStage === 'gameover' && <GameoverContainer retry={retry} score={score}/>}
+      </section>
     </div>
   )
 }
