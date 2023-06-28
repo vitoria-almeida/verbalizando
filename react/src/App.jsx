@@ -100,6 +100,14 @@ function App() {
   //background 
   const [newText] = useState('VERBALIZANDO');
   const [newTexture] = useState(generateTexture(newText));
+
+  //reload page
+  window.onload = function() {
+    if (!sessionStorage.getItem('pageReloaded')) {
+      sessionStorage.setItem('pageReloaded', 'true');
+      location.reload();
+    }
+  }
   
   return (
     <div className={styles.divApp} style={{ backgroundImage: `url(${newTexture})` }}>
