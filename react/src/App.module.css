@@ -13,4 +13,12 @@
     height: 70%;
     background-color: white; 
     line-height: 1;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+    .sectionApp{
+        width: 95%;
+    }
 }

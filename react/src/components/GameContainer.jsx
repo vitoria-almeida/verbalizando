@@ -14,7 +14,7 @@ const GameContainer = ({ verifyLetter, pickedCategory, letters, guessedLetters, 
   }
 
   return (
-    <div className={styles.div}>
+    <div className={styles.divGame}>
       <h4>Pontuação: <span>{score}</span></h4>
       <h2>Adivinhe o <span>{pickedCategory}</span></h2>
       <p>Você ainda tem <span>{chances}</span> tentativa(s).</p>
