@@ -3,7 +3,7 @@ Verbalizando é um jogo estilo "jogo da forca", no qual o jogador deverá descob
 
 # Como jogar?
 
-1ª Acesse o link: [link];
+1ª Acesse o link: https://vitoria-almeida.github.io/verbalizando/;
 
 2º Clique no botão JOGAR para iniciar o jogo;
 
@@ -11,5 +11,6 @@ Verbalizando é um jogo estilo "jogo da forca", no qual o jogador deverá descob
 
 4º Mas cuidado! Cada jogador só terá 3 chances de errar! Se o jogador acertar a palavra antes das chances esgotarem ele ganha o jogo, caso contrário ele perde.
 
-[print]
-[gif]
+<div align="center"> 
+ <img src="./react/public/print.png" width="700" />
+</div>
