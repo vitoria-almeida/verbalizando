@@ -9,7 +9,7 @@ Verbalizando é um jogo estilo "jogo da forca", no qual o jogador deverá descob
 
 3º Escolha uma letra por vez e tente descobrir qual é a palavra misteriosa;
 
-4º Mas cuidado! Cada jogador só terá 3 chances de errar! Se o jogador acertar a palavra antes das chances esgotarem ele ganha o jogo, caso contrário ele perde.
+4º Mas cuidado! Cada jogador só terá 5 chances de errar! Se o jogador acertar a palavra antes das chances esgotarem ele ganha o jogo, caso contrário ele perde.
 
 <div align="center"> 
  <img src="./react/public/print.png" width="700" />
