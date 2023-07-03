@@ -25,6 +25,18 @@ function App() {
   const [chances, setChances] = useState(5)
   const [score, setScore] = useState(0)
 
+  //background 
+  const [newText] = useState('VERBALIZANDO');
+  const [newTexture] = useState(generateTexture(newText));
+
+  //reload page
+  window.onload = function() {
+    if (!sessionStorage.getItem('pageReloaded')) {
+      sessionStorage.setItem('pageReloaded', 'true');
+      location.reload();
+    }
+  }
+
   const randomCategoryAndWord = useCallback(() => {
     const categories = Object.keys(words)
     const category = categories[Math.floor(Math.random() * Object.keys(categories).length)]
@@ -33,6 +45,7 @@ function App() {
   }, [words])
 
   const startGame = useCallback(() => {
+    clearGame()
     const {category, word} = randomCategoryAndWord()
 
     //transforming a word in an array of letters
@@ -42,7 +55,6 @@ function App() {
     setPickedCategory(category)
     setPickedWord(word)
     setLetters(wordsLetters)
-    console.log(word)
 
     setGameStage(stages[1].stage)
   }, [randomCategoryAndWord])
@@ -56,13 +68,15 @@ function App() {
 
     if(letters.includes(defaultLetter)) {
       setGuessedLetters((actualGuessedLetters) => [
-        ...actualGuessedLetters, letter
+        ...actualGuessedLetters, 
+        letter
       ])
     } else {
       setWrongLetters((actualWrongLetters) => [
-        ...actualWrongLetters, defaultLetter
+        ...actualWrongLetters, 
+        defaultLetter
       ])
-      setChances((actualGuesses) => actualGuesses - 1)
+      setChances((actualChances) => actualChances - 1)
     }
   }
 
@@ -92,29 +106,17 @@ function App() {
 
     if(guessedLetters.length === uniqueLetters.length && gameStage === stages[1].stage) {
       setScore((actualScore) => actualScore += 100)
-      setTimeout(() => clearGame(), 1000);
+      setTimeout(() => startGame(), 1000);
     }
 
   }, [gameStage, guessedLetters, letters, startGame])
 
-  //background 
-  const [newText] = useState('VERBALIZANDO');
-  const [newTexture] = useState(generateTexture(newText));
-
-  //reload page
-  window.onload = function() {
-    if (!sessionStorage.getItem('pageReloaded')) {
-      sessionStorage.setItem('pageReloaded', 'true');
-      location.reload();
-    }
-  }
-  
   return (
     <div className={styles.divApp} style={{ backgroundImage: `url(${newTexture})` }}>
       <section className={styles.sectionApp} >
-        {gameStage === 'start' && <StartContainer startGame={startGame}/>}
-        {gameStage === 'game' && <GameContainer verifyLetter={verifyLetter} pickedWord={pickedWord} pickedCategory={pickedCategory} letters={letters} guessedLetters={guessedLetters} wrongLetters={wrongLetters} chances={chances} score={score}/>}
-        {gameStage === 'gameover' && <GameoverContainer retry={retry} score={score}/>}
+      {gameStage === 'start' && <StartContainer startGame={startGame}/>}
+      {gameStage === 'game' && <GameContainer verifyLetter={verifyLetter} pickedWord={pickedWord} pickedCategory={pickedCategory} letters={letters} guessedLetters={guessedLetters} wrongLetters={wrongLetters} chances={chances} score={score}/>}
+      {gameStage === 'gameover' && <GameoverContainer retry={retry} score={score}/>}
       </section>
     </div>
   )
